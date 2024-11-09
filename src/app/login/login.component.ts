@@ -54,7 +54,5 @@ export class LoginComponent {
   Registrar() {
     this.router.navigateByUrl('/Registrar');
     this.dialogRef.close();
-
-    
   }
 }
