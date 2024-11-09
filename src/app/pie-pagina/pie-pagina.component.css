@@ -1,0 +1,20 @@
+.footer {
+    background-color: #E6E6FA; /* Fondo lavanda suave */
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    color: #333; /* Color del texto */
+    text-align: center; /* Centrar el texto */
+  }
+  
+  .footer h6 {
+    margin: 0;
+    font-weight: bold;
+  }
+  
+  .footer p {
+    margin: 5px 0 0;
+    font-size: 14px; /* Tamaño del texto más pequeño */
+  }
+  

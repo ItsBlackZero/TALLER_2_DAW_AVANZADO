@@ -1,0 +1,52 @@
+<h3 class="login-title">Registro</h3>
+
+<div class="login-container">
+  <div class="login-form">
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Ingresa tu email</mat-label>
+      <input
+        matInput
+        placeholder="pat@example.com"
+        [formControl]="email"
+        (blur)="updateErrorMessage()"
+        required
+      />
+      <mat-error *ngIf="email.invalid">{{ errorMessage }}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Ingresa tu contraseña</mat-label>
+      <input matInput [type]="hideClave ? 'password' : 'text'" [formControl]="clave" required />
+      <button
+        mat-icon-button
+        matSuffix
+        (click)="toggleClaveVisibility()"
+        [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hideClave"
+      >
+        <mat-icon>{{ hideClave ? 'visibility_off' : 'visibility' }}</mat-icon>
+      </button>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Repite tu contraseña</mat-label>
+      <input matInput [type]="hideConfirmClave ? 'password' : 'text'" [formControl]="confirmarClave" required />
+      <button
+        mat-icon-button
+        matSuffix
+        (click)="toggleConfirmClaveVisibility()"
+        [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hideConfirmClave"
+      >
+        <mat-icon>{{ hideConfirmClave ? 'visibility_off' : 'visibility' }}</mat-icon>
+      </button>
+      <mat-error *ngIf="claveCoincideError">{{ claveCoincideError }}</mat-error>
+    </mat-form-field>
+
+    <div class="button-group">
+      <button mat-raised-button (click)="registrarUsuario()" class="full-width">Aceptar</button>
+      <button mat-raised-button color="warn" class="full-width" (click)="Volver()">Volver</button>
+    </div>
+  </div>
+</div>
+
