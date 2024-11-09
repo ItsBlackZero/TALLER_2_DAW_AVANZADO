@@ -1,0 +1,86 @@
+/* Estilo General */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f2f5; /* Fondo claro */
+    margin: 0;
+    padding: 0;
+}
+
+/* Contenedor de Inicio de Sesión */
+.login-container {
+    max-width: 400px; /* Ancho máximo */
+    margin: 100px auto; /* Centrado en la página */
+    padding: 20px; /* Espaciado interno */
+    background-color: #ffffff; /* Fondo blanco */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
+}
+
+/* Título */
+.login-title {
+    text-align: center; /* Centrado */
+    font-size: 26px; /* Tamaño de título más grande */
+    margin-bottom: 20px; /* Espaciado inferior */
+    color: #444; 
+}
+
+
+mat-form-field {
+    width: 100%; 
+    margin-bottom: 15px; /* Espaciado inferior ajustado */
+}
+
+/* Botones */
+.button-group {
+    display: flex; 
+    justify-content: space-between; 
+    margin-top: 10px;
+}
+
+button {
+    flex: 1; 
+    margin: 0 5px; 
+    padding: 10px; 
+    border-radius: 5px;
+    transition: background-color 0.3s ease; 
+}
+
+button.mat-raised-button.color-primary {
+    background-color: #007bff; 
+    color: white;
+}
+
+button.mat-raised-button.color-primary:hover {
+    background-color: #0056b3; 
+}
+
+button.mat-raised-button.color-warn {
+    background-color: #dc3545; /* Rojo */
+    color: white; /* Texto blanco */
+}
+
+button.mat-raised-button.color-warn:hover {
+    background-color: #c82333; /* Rojo oscuro en hover */
+}
+
+.link-actions {
+    text-align: center; /* Centrado de los enlaces */
+    margin-top: 10px;
+}
+
+.link-actions a {
+    text-decoration: none;
+    color: #007bff; 
+    font-size: 14px;
+    cursor: pointer; 
+}
+
+.link-actions a:hover {
+    text-decoration: underline; 
+    color: #0056b3; 
+}
+
+
+mat-error {
+    color: #dc3545; 
+}

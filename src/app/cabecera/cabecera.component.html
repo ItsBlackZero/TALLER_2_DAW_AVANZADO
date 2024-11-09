@@ -1,0 +1,6 @@
+<mat-toolbar>
+  <span>SDE</span>
+  <span class="example-spacer"></span>
+  <button mat-raised-button *ngIf="!logeado" (click)="openDialogLogin()" > Iniciar Sesion </button>
+  <button mat-raised-button *ngIf="logeado" (click)="cerrarsesion()" > Cerrar Sesion  </button>
+</mat-toolbar>
