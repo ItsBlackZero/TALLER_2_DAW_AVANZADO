@@ -4,14 +4,14 @@
 
 
 mat-toolbar {
-  background-color: #5e35b1; 
-  color: white; 
+  background-color: #3B1E54; 
+  color: #EEEEEE; 
   padding: 10px 20px; 
 }
 
 mat-toolbar button {
   background-color: #ffffff; 
-  color: #5e35b1; 
+  color: #3B1E54; 
   border-radius: 5px; 
   margin-left: 16px; 
 }

@@ -19,6 +19,8 @@ import { LoginComponent } from "./login/login.component";
 import { MatTableModule } from "@angular/material/table";
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { RegistrarLoginComponent } from "./registrar-login/registrar-login.component";
+import { MatGridListModule } from "@angular/material/grid-list";
+import { MatCardModule } from "@angular/material/card";
 
 @NgModule({
     declarations: [
@@ -41,7 +43,9 @@ import { RegistrarLoginComponent } from "./registrar-login/registrar-login.compo
         MatFormFieldModule,
         ReactiveFormsModule, 
         MatDialogModule,
-        MatTableModule
+        MatTableModule,
+        MatGridListModule,
+        MatCardModule
     ],
     providers: [
         PublicVarService,

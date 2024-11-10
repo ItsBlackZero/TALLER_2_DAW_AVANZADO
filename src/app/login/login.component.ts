@@ -4,7 +4,8 @@ import { FormControl, Validators } from '@angular/forms';
 import { merge } from 'rxjs';
 import { PublicVarService } from '../publicvar.service';
 import { Router } from '@angular/router';
-import { MatDialogRef } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { RegistrarLoginComponent } from '../registrar-login/registrar-login.component';
 
 @Component({
   selector: 'app-login',
@@ -50,9 +51,13 @@ export class LoginComponent {
     this.router.navigateByUrl('/Registrar');
     this.dialogRef.close();
   }
+  readonly dialog = inject(MatDialog);
 
   Registrar() {
-    this.router.navigateByUrl('/Registrar');
     this.dialogRef.close();
+    const dialogRef = this.dialog.open(RegistrarLoginComponent);
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('El diálogo se cerró');
+    });
   }
 }
