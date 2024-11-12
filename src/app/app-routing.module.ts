@@ -1,12 +1,15 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { PaginainicialComponent } from "./paginainicial/paginainicial.component";
-import { RegistrarLoginComponent } from "./registrar-login/registrar-login.component";
+import { ReporteClientesComponent } from "./reporte-clientes/reporte-clientes.component";
 
 
 const routes:Routes=[
     {path:"",component:PaginainicialComponent},
-    { path: 'Registrar', component: RegistrarLoginComponent }, 
+    { path: 'PaginaInicial', component: PaginainicialComponent }, 
+    { path: 'ReporteCliente', component: ReporteClientesComponent }, 
+
+
 ]
 
 @NgModule({

@@ -1,86 +1,73 @@
-/* Estilos generales */
+.login-container {
+  background-color: #EEEEEE;
+  border-radius: 8px;
+  padding: 2rem;
+  max-width: 400px;
+  margin: 0 auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  color: #3B1E54;
+  font-family: Arial, sans-serif;
+}
+
 .login-title {
-    font-size: 24px;
-    color: #333333; /* Cambia esto por el color de título de tu paleta */
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .login-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 60vh;
-    background-color: #f5f5f5; /* Fondo de la página, ajusta según tu paleta */
-  }
-  
-  .login-form {
-    width: 100%;
-    max-width: 400px;
-    padding: 40px;
-    background-color: #ffffff; /* Fondo del formulario */
-    border-radius: 8px;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Sombra ligera */
-  }
-  
-  /* Estilo de los campos de formulario */
-  mat-form-field.full-width {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-  
-  mat-form-field .mat-form-field-wrapper {
-    background-color: #f0f8ff; /* Fondo de los campos de texto */
-    border-radius: 4px;
-  }
-  
-  mat-label {
-    color: #666666; /* Color del label */
-    font-weight: 500;
-  }
-  
-  input[matInput]::placeholder {
-    color: #aaaaaa; /* Color del placeholder */
-    opacity: 0.8;
-  }
-  
-  mat-error {
-    color: #e57373; /* Color de los mensajes de error */
-  }
-  
-  /* Estilo de botones */
-  .button-group {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 20px;
-  }
-  
-  button.full-width {
-    width: 100%;
-    font-weight: bold;
-  }
-  
-  button[mat-raised-button] {
-    color: #ffffff; /* Texto de botón */
-    background-color: #00796b; /* Color principal para el botón */
-  }
-  
-  button[mat-raised-button]:hover {
-    background-color: #004d40; /* Color de hover */
-  }
-  
-  button[mat-raised-button][color="warn"] {
-    background-color: #e57373; /* Color del botón "Volver" */
-  }
-  
-  button[mat-raised-button][color="warn"]:hover {
-    background-color: #c62828; /* Hover del botón "Volver" */
-  }
-  
-  /* Icono de visibilidad */
-  mat-icon {
-    color: #555555; /* Color del icono de visibilidad */
-  }
-  
-  
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #3B1E54;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.login-form .full-width {
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.mat-form-field-appearance-fill .mat-form-field-wrapper {
+  background-color: #D4BEE4;
+  border-radius: 5px;
+}
+
+.mat-form-field-label {
+  color: #3B1E54;
+}
+
+.mat-form-field.mat-focused .mat-form-field-label,
+.mat-input-element {
+  color: #3B1E54 !important;
+}
+
+.mat-error {
+  color: #9B7EBD;
+}
+
+.mat-icon-button {
+  color: #3B1E54;
+}
+
+.mat-icon-button:hover {
+  color: #9B7EBD;
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+}
+
+.button-group button {
+  background-color: #3B1E54;
+  color: #FFFFFF;
+  font-weight: bold;
+}
+
+.button-group button:hover {
+  background-color: #9B7EBD;
+}
+
+.button-group button[color="warn"] {
+  background-color: #9B7EBD;
+  color: #3B1E54;
+}
+
+.button-group button[color="warn"]:hover {
+  background-color: #D4BEE4;
+}
