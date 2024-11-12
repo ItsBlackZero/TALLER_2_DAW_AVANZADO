@@ -24,9 +24,12 @@
         (click)="toggleClaveVisibility()"
         [attr.aria-label]="'Hide password'"
         [attr.aria-pressed]="hideClave"
+        (blur)="verificarClaveCoincide()"
       >
         <mat-icon>{{ hideClave ? 'visibility_off' : 'visibility' }}</mat-icon>
+        
       </button>
+      <mat-error *ngIf="clave.invalid">{{ claveCoincideError }}</mat-error>
     </mat-form-field>
 
     <mat-form-field appearance="fill" class="full-width">
@@ -45,7 +48,7 @@
     </mat-form-field>
 
     <div class="button-group">
-      <button mat-raised-button (click)="registrarUsuario()" class="full-width">Aceptar</button>
+<button mat-raised-button (click)="registrarUsuario()" class="full-width" type="button">Aceptar</button>
       <button mat-raised-button color="warn" class="full-width" (click)="Volver()">Volver</button>
     </div>
   </div>

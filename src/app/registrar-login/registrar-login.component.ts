@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormControl, Validators } from '@angular/forms';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-registrar-login',
@@ -8,29 +9,26 @@ import { FormControl, Validators } from '@angular/forms';
   styleUrls: ['./registrar-login.component.css']
 })
 export class RegistrarLoginComponent {
-  hideClave = true;  // Control para ocultar/mostrar la clave
-  hideConfirmClave = true; // Control para ocultar/mostrar confirmar clave
+  hideClave = true;
+  hideConfirmClave = true;
   readonly email = new FormControl('', [Validators.required, Validators.email]);
   readonly clave = new FormControl('', [Validators.required, Validators.minLength(6)]);
   readonly confirmarClave = new FormControl('', [Validators.required]);
-  errorMessage = '';  // Mensaje de error de email
-  claveCoincideError = '';  // Error si las claves no coinciden
+  errorMessage = '';
+  claveCoincideError = '';
 
-  constructor(private router: Router) {
-    // Observador que se activa cuando el usuario cambia el campo "Repite tu contraseña"
+  constructor(private router: Router,private dialogRef: MatDialogRef<RegistrarLoginComponent>) {
     this.confirmarClave.valueChanges.subscribe(() => this.verificarClaveCoincide());
   }
 
-  // Método para volver a la página principal
   Volver() {
+    this.dialogRef.close();
     this.router.navigateByUrl('/PaginaInicial');
-
   }
 
-  // Verifica que las claves coincidan
   verificarClaveCoincide() {
     if (this.clave.value !== this.confirmarClave.value) {
-      this.claveCoincideError = 'Las claves no coinciden';
+      this.claveCoincideError = 'Las contraseñas no coinciden';
     } else {
       this.claveCoincideError = '';
     }
@@ -39,8 +37,8 @@ export class RegistrarLoginComponent {
   registrarUsuario() {
     if (this.email.valid && this.clave.valid && this.confirmarClave.valid && this.clave.value === this.confirmarClave.value) {
       console.log('Registrando usuario:', this.email.value);
-      this.router.navigateByUrl(''); 
-    } else {
+      this.dialogRef.close();
+      this.router.navigateByUrl("PaginaInicial"); 
       this.errorMessage = 'Por favor, complete todos los campos correctamente.';
     }
   }
@@ -55,9 +53,9 @@ export class RegistrarLoginComponent {
 
   updateErrorMessage() {
     if (this.email.hasError('required')) {
-      this.errorMessage = 'Ingresa un email';
+      this.errorMessage = 'El correo electrónico es obligatorio';
     } else if (this.email.hasError('email')) {
-      this.errorMessage = 'Email no válido';
+      this.errorMessage = 'Formato de correo electrónico no válido';
     } else {
       this.errorMessage = '';
     }
