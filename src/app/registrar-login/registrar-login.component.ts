@@ -23,7 +23,8 @@ export class RegistrarLoginComponent {
 
   // Método para volver a la página principal
   Volver() {
-    this.router.navigateByUrl('');
+    this.router.navigateByUrl('/PaginaInicial');
+
   }
 
   // Verifica que las claves coincidan

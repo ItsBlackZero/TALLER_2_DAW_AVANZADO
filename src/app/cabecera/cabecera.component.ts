@@ -19,6 +19,9 @@ export class CabeceraComponent implements OnInit {
       console.log(`Esta logeado?: ${data}`);
       this.logeado = data;
     });
+    if(this.logeado !=false){
+
+    }
   }
 
   cerrarsesion() {
@@ -34,5 +37,10 @@ export class CabeceraComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log('El diálogo se cerró');
     });
+  }
+
+  openDialogReportes(){
+    this.router.navigateByUrl('/ReporteCliente');
+
   }
 }

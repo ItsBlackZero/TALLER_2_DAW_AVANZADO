@@ -45,11 +45,12 @@ export class LoginComponent {
   }
 
   iniciarsesion() {
-    alert(`Presionando sobre el botón aceptar ${this.email.value}`);
+    if (this.email.value !== '' && this.clave.value !== '') {
     this.miServicioEjecutor.logeado$.next(true);
-    console.log('Navegando a /Registrar');
-    this.router.navigateByUrl('/Registrar');
-    this.dialogRef.close();
+      this.router.navigateByUrl('/PaginaInicial');
+      this.dialogRef.close();
+      console.log('entro');
+  }
   }
   readonly dialog = inject(MatDialog);
 

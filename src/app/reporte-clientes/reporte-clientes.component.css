@@ -1,0 +1,104 @@
+mat-card {
+    background-color: #fff; /* Fondo blanco para el card */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave para dar profundidad */
+    padding: 20px;
+    margin: 20px 0;
+  }
+  
+  mat-card-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #3B1E54; /* Color oscuro para el título */
+    margin-bottom: 20px; /* Espacio debajo del título */
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #EEEEEE; /* Fondo suave */
+    border-radius: 8px;
+    overflow: hidden; /* Para bordes redondeados en las celdas */
+  }
+  
+  th.mat-header-cell, td.mat-cell {
+    padding: 12px 15px;
+    text-align: left;
+    font-size: 14px;
+    color: #3B1E54; /* Color oscuro para el texto */
+  }
+  
+  th.mat-header-cell {
+    background-color: #3B1E54; /* Color de fondo oscuro para el encabezado */
+    color: white; /* Texto blanco */
+    font-weight: bold;
+    text-transform: uppercase; /* Mayúsculas para los encabezados */
+    border-bottom: 2px solid #9B7EBD; /* Línea sutil debajo de las cabeceras */
+  }
+  
+  td.mat-cell {
+    background-color: #D4BEE4; /* Color suave para las filas */
+    color: #3B1E54; /* Texto oscuro */
+    border-bottom: 1px solid #ddd; /* Líneas finas entre filas */
+  }
+  
+  th.mat-header-cell:hover {
+    background-color: #9B7EBD; /* Tono lila al pasar el mouse sobre la cabecera */
+  }
+  
+  tr.mat-row:hover {
+    background-color: #9B7EBD; /* Tono lila al pasar el mouse sobre las filas */
+    color: white; /* Texto blanco al hacer hover */
+  }
+  
+  tr:nth-child(odd) {
+    background-color: #EEEEEE; /* Color gris claro para las filas impares */
+  }
+  
+  tr.mat-row:hover td {
+    background-color: #9B7EBD; /* Fila en lila claro al pasar el mouse */
+  }
+  
+  table, th.mat-header-cell, td.mat-cell {
+    border-radius: 8px;
+  }
+  
+  tr.mat-row {
+    transition: background-color 0.3s ease; /* Suavizar transición de color al hacer hover */
+  }
+  
+  mat-card {
+    background-color: #FFF; /* Fondo blanco para el card */
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+  .mat-header-cell, .mat-cell {
+    font-size: 14px;
+  }
+  
+  th.mat-header-cell, td.mat-cell {
+    border-left: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+  }
+/* Estilo para el contenedor del encabezado del card */
+.card-header {
+    display: flex;
+    justify-content: space-between; /* Distribuye los elementos, dejando espacio entre el título y los botones */
+    align-items: center; /* Alinea verticalmente el contenido */
+  }
+  
+  /* Contenedor para los botones */
+  .button-container {
+    display: flex;
+    gap: 10px; /* Espacio entre los botones */
+  }
+  
+  /* Estilo para los botones */
+  div button {
+    background-color: #ffffff; 
+    color: #3B1E54; 
+    border-radius: 5px; 
+    margin-left: 16px; 
+    margin-bottom: 20px;
+  }

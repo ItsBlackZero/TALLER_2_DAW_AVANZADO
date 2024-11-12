@@ -21,6 +21,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { RegistrarLoginComponent } from "./registrar-login/registrar-login.component";
 import { MatGridListModule } from "@angular/material/grid-list";
 import { MatCardModule } from "@angular/material/card";
+import { ReporteClientesComponent } from "./reporte-clientes/reporte-clientes.component";
 
 @NgModule({
     declarations: [
@@ -29,7 +30,8 @@ import { MatCardModule } from "@angular/material/card";
         PiePaginaComponent,
         PaginainicialComponent,
         LoginComponent,
-        RegistrarLoginComponent
+        RegistrarLoginComponent,
+        ReporteClientesComponent
     ],
     imports: [
         BrowserModule,
@@ -45,7 +47,8 @@ import { MatCardModule } from "@angular/material/card";
         MatDialogModule,
         MatTableModule,
         MatGridListModule,
-        MatCardModule
+        MatCardModule,
+        MatTableModule
     ],
     providers: [
         PublicVarService,
