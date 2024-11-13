@@ -1,6 +1,6 @@
 <div class="centro">
-    <h2>Registrar Usuario</h2>
-    <form [formGroup]="usuarioForm" (ngSubmit)="enviar()">
+    <h2>Actualizar Usuario</h2>
+    <form [formGroup]="usuarioForm" (ngSubmit)="guardar()">
       <mat-form-field appearance="outline" class="full-width">
         <mat-label>Nombre</mat-label>
         <input matInput formControlName="name" required>
@@ -39,10 +39,9 @@
         <mat-label>Fecha de Registro</mat-label>
         <input matInput type="date" formControlName="fecha_registro" required>
       </mat-form-field>
-    
       <div class="button-group">
-        <button mat-raised-button type="submit" [disabled]="usuarioForm.invalid">Registrar</button>
-        <button mat-raised-button class="full-width" (click)="cancelar()">Cancelar</button>
+        <button mat-raised-button type="submit" [disabled]="usuarioForm.invalid">Guardar</button>
+        <button mat-raised-button (click)="cancelar()">Cancelar</button>
       </div>
     </form>
     

@@ -2,20 +2,20 @@ import { Injectable } from "@angular/core";
 import { BehaviorSubject } from "rxjs";
 
 export interface PeriodicElement{
-    cedula: string;
-    nombres: string;
-    apellidos: string;
+    name: string;
     edad: number;
-    correo: string;
-    departamento: string;
-
+    genero: string;
+    email: string;
+    telefono: string;
+    servicio_prestado: string;
+    fecha_registro: string;
 }
 
 @Injectable()
 export class PublicVarService{
-    data_incial: PeriodicElement = { cedula: "1", nombres: "1", apellidos: "1", edad:0 , correo:"1", departamento:"1" }
+    data_incial: PeriodicElement = { name: "*", edad: 0, genero: "*", email:"*" , telefono:"*", servicio_prestado:"*", fecha_registro:"*" }
     public logeado$ = new BehaviorSubject<boolean>(false);
-    public datosRegistro$ = new  BehaviorSubject<PeriodicElement>(this.data_incial);
+    public datosActualizar$ = new  BehaviorSubject<PeriodicElement>(this.data_incial);
 
     constructor(){
         

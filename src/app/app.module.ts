@@ -24,6 +24,7 @@ import { MatCardModule } from "@angular/material/card";
 import { ReporteClientesComponent } from "./reporte-clientes/reporte-clientes.component";
 import { RegistrarUsuarioComponent } from "./registrar-usuario/registrar-usuario.component";
 import { MatSelectModule }  from '@angular/material/select';
+import { ActualizarUsuarioComponent } from "./actualizar-usuario/actualizar-usuario.component";
 
 @NgModule({
     declarations: [
@@ -34,7 +35,8 @@ import { MatSelectModule }  from '@angular/material/select';
         LoginComponent,
         RegistrarLoginComponent,
         ReporteClientesComponent,
-        RegistrarUsuarioComponent
+        RegistrarUsuarioComponent,
+        ActualizarUsuarioComponent
     ],
     imports: [
         BrowserModule,

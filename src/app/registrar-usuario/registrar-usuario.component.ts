@@ -20,16 +20,20 @@ export class RegistrarUsuarioComponent {
       genero: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       telefono: ['', [Validators.required, Validators.pattern('^[0-9]{10}$')]],
-      servicioPrestado: ['', Validators.required],
-      fechaRegistro: ['', Validators.required]
+      servicio_prestado: ['', Validators.required],
+      fecha_registro: ['', Validators.required]
     });
   }
+
   enviar() {
-      
-      if (this.usuarioForm.valid) {
-        this.datosCompartidos.setUserData(this.usuarioForm.value);
-        this.dialogRef.close();
-        this.router.navigate(['/ReporteCliente']);
-      }
+    if (this.usuarioForm.valid) {
+      this.datosCompartidos.setUserData(this.usuarioForm.value);
+      this.dialogRef.close();
+      this.router.navigate(['/ReporteCliente']);
     }
+  }
+  
+  cancelar(){
+    this.dialogRef.close();
+  }
 }
