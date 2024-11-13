@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { RegistrarUsuarioComponent } from '../registrar-usuario/registrar-usuario.component';
 
 @Component({
   selector: 'app-reporte-clientes',
@@ -7,6 +9,7 @@ import { Component } from '@angular/core';
 })
 export class ReporteClientesComponent {
 
+  readonly dialog = inject(MatDialog);
   // Datos de ejemplo para la tabla
   ReporteCliente = [
     { id: 1, name: 'Juan', edad: 22, genero: 'Masculino', email: 'juan@email.com', telefono: '0958842174',servicio_prestado: 'Medicina general', fecha_registro: '2024-01-10' },
@@ -17,4 +20,7 @@ export class ReporteClientesComponent {
   // Columnas que se mostrarán en la tabla
   displayedColumns: string[] = ['id', 'name', 'edad', 'genero', 'email', 'telefono','servicio_prestado', 'fecha_registro'];
 
+  registrarUsuario(){
+    const dialogRef= this.dialog.open(RegistrarUsuarioComponent, {width: "400px"});
+  }
 }

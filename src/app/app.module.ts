@@ -22,6 +22,8 @@ import { RegistrarLoginComponent } from "./registrar-login/registrar-login.compo
 import { MatGridListModule } from "@angular/material/grid-list";
 import { MatCardModule } from "@angular/material/card";
 import { ReporteClientesComponent } from "./reporte-clientes/reporte-clientes.component";
+import { RegistrarUsuarioComponent } from "./registrar-usuario/registrar-usuario.component";
+import { MatSelectModule }  from '@angular/material/select';
 
 @NgModule({
     declarations: [
@@ -31,7 +33,8 @@ import { ReporteClientesComponent } from "./reporte-clientes/reporte-clientes.co
         PaginainicialComponent,
         LoginComponent,
         RegistrarLoginComponent,
-        ReporteClientesComponent
+        ReporteClientesComponent,
+        RegistrarUsuarioComponent
     ],
     imports: [
         BrowserModule,
@@ -48,7 +51,8 @@ import { ReporteClientesComponent } from "./reporte-clientes/reporte-clientes.co
         MatTableModule,
         MatGridListModule,
         MatCardModule,
-        MatTableModule
+        MatTableModule,
+        MatSelectModule
     ],
     providers: [
         PublicVarService,
