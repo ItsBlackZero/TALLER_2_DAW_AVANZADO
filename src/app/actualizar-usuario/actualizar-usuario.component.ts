@@ -1,9 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { DatosCompartidosService } from '../datos-compartidos.service';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { PublicVarService } from '../publicvar.service';
 
 @Component({
   selector: 'app-actualizar-usuario',
@@ -14,9 +12,8 @@ export class ActualizarUsuarioComponent {
   usuarioForm: FormGroup;
 
   constructor(private form: FormBuilder,
-    private datosCompartidos: DatosCompartidosService, 
     private dialogRef: MatDialogRef<ActualizarUsuarioComponent>, 
-    private router: Router, private miServicioEjecutor: PublicVarService,     
+    private router: Router,
     @Inject(MAT_DIALOG_DATA) public data: any//recibir datos
 ) {
     this.usuarioForm = this.form.group({
@@ -33,6 +30,7 @@ export class ActualizarUsuarioComponent {
   guardar() {
     if (this.usuarioForm.valid) {
       this.dialogRef.close(this.usuarioForm.value);  // Devolvemos el formulario actualizado
+      this.router.navigate(['/ReporteCliente']);
     }
   }
 
