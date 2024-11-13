@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { DatosCompartidosService } from '../datos-compartidos.service';
 
 
 @Component({
@@ -12,7 +13,7 @@ import { Router } from '@angular/router';
 export class RegistrarUsuarioComponent {
   usuarioForm: FormGroup;
 
-  constructor(private form: FormBuilder, private dialogRef: MatDialogRef<RegistrarUsuarioComponent>, private router: Router) {
+  constructor(private form: FormBuilder,private datosCompartidos: DatosCompartidosService, private dialogRef: MatDialogRef<RegistrarUsuarioComponent>, private router: Router) {
     this.usuarioForm = this.form.group({
       name: ['', Validators.required],
       edad: ['', [Validators.required, Validators.min(0)]],
@@ -24,10 +25,11 @@ export class RegistrarUsuarioComponent {
     });
   }
   enviar() {
-    if (this.usuarioForm.valid) {
-      this.dialogRef.close();
-      this.router.navigateByUrl("ReporteCliente"); 
-      console.log('Datos del usuario:', this.usuarioForm.value);
+      
+      if (this.usuarioForm.valid) {
+        this.datosCompartidos.setUserData(this.usuarioForm.value);
+        this.dialogRef.close();
+        this.router.navigate(['/ReporteCliente']);
+      }
     }
-  }
 }
