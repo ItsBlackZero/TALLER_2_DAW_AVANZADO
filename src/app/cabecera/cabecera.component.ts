@@ -43,4 +43,8 @@ export class CabeceraComponent implements OnInit {
     this.router.navigateByUrl('/ReporteCliente');
 
   }
+
+  openCitas() {
+    this.router.navigateByUrl('/citas');
+  }
 }
