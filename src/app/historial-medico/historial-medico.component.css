@@ -1,0 +1,138 @@
+/* Estilos Generales */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  h2 {
+    color: #3B1E54;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Botón Agregar */
+  .btn-add {
+    background-color: #3B1E54;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    display: block;
+    width: 100%;
+  }
+  
+  .btn-add:hover {
+    background-color: #2C153C;
+  }
+  
+  /* Formulario */
+  .form-container {
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  form div {
+    margin-bottom: 15px;
+  }
+  
+  form label {
+    font-weight: bold;
+    color: #3B1E54;
+  }
+  
+  form input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #D4BEE4;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  form button {
+    background-color: #9B7EBD;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+  }
+  
+  form button:disabled {
+    background-color: #D4BEE4;
+    cursor: not-allowed;
+  }
+  
+  form button:hover {
+    background-color: #7E5EAB;
+  }
+  
+  /* Lista de Historias Médicas */
+  .historiales-list {
+    margin-top: 30px;
+  }
+  
+  .historial-item {
+    background-color: #FFFFFF;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+  }
+  
+  .historial-item:hover {
+    background-color: #F7F7F7;
+  }
+  
+  .historial-item h3 {
+    color: #3B1E54;
+    font-size: 20px;
+  }
+  
+  .historial-item p {
+    color: #9B7EBD;
+    font-size: 14px;
+  }
+  
+  .historial-item button {
+    background-color: #D32F2F;  /* Rojo para eliminar */
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .historial-item button:hover {
+    background-color: #C2185B;
+  }
+  
+  .historial-item button:focus {
+    outline: none;
+  }
+  
+  /* Estilos para el formulario al ser visible */
+  form-container {
+    background-color: #D4BEE4;
+  }
+  

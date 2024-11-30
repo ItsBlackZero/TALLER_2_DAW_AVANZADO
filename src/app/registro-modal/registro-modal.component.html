@@ -1,0 +1,33 @@
+<h2 mat-dialog-title>Nuevo Registro</h2>
+<mat-dialog-content>
+  <form [formGroup]="registroForm" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <mat-label>Nombre del Paciente</mat-label>
+      <input matInput formControlName="nombre" />
+      <mat-error *ngIf="registroForm.get('nombre')?.hasError('required')">
+        El nombre es obligatorio
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Diagnóstico</mat-label>
+      <input matInput formControlName="diagnostico" />
+      <mat-error *ngIf="registroForm.get('diagnostico')?.hasError('required')">
+        El diagnóstico es obligatorio
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Fecha</mat-label>
+      <input matInput formControlName="fecha" type="date" />
+      <mat-error *ngIf="registroForm.get('fecha')?.hasError('required')">
+        La fecha es obligatoria
+      </mat-error>
+    </mat-form-field>
+
+    <div mat-dialog-actions>
+      <button mat-button (click)="onCancel()">Cancelar</button>
+      <button mat-raised-button color="primary" [disabled]="registroForm.invalid">Guardar</button>
+    </div>
+  </form>
+</mat-dialog-content>

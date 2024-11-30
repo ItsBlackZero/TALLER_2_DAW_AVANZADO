@@ -1,0 +1,45 @@
+<div class="container">
+    <h2>Historial Médico</h2>
+  
+    <!-- Botón para agregar historial -->
+    <button (click)="toggleVisibility()" class="btn-add">Agregar Historial</button>
+  
+    <!-- Mostrar el formulario si 'isVisible' es true -->
+    <div *ngIf="isVisible" class="form-container">
+      <form [formGroup]="historialForm" (ngSubmit)="agregarHistorial()">
+        <div>
+          <label for="nombrePaciente">Nombre del Paciente</label>
+          <input id="nombrePaciente" formControlName="nombrePaciente" />
+        </div>
+        <div>
+          <label for="diagnostico">Diagnóstico</label>
+          <input id="diagnostico" formControlName="diagnostico" />
+        </div>
+        <div>
+          <label for="fechaConsulta">Fecha de Consulta</label>
+          <input type="date" id="fechaConsulta" formControlName="fechaConsulta" />
+        </div>
+        <button type="submit" [disabled]="!historialForm.valid">
+          {{ editar ? 'Actualizar' : 'Agregar' }}
+        </button>
+        <button type="button" (click)="cancelarEdicion()">Cancelar</button>
+      </form>
+    </div>
+  
+    <!-- Mostrar lista de historiales médicos -->
+    <div class="historiales-list">
+      <div *ngFor="let historial of historiales" class="historial-item">
+        <div>
+          <h3>{{ historial.nombrePaciente }}</h3>
+          <p>{{ historial.diagnostico }}</p>
+          <p><strong>Fecha de Consulta:</strong> {{ historial.fechaConsulta }}</p>
+        </div>
+  
+        <!-- Botón para eliminar historial -->
+        <button (click)="eliminarHistorial(historial.id)" class="btn-delete">
+          Eliminar
+        </button>
+      </div>
+    </div>
+  </div>
+  

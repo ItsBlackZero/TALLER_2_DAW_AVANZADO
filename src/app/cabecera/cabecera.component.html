@@ -3,6 +3,8 @@
   <span class="example-spacer"></span>
   <button mat-raised-button *ngIf="logeado" (click)="openDialogReportes()" > Reporte Clientes </button>
   <button mat-raised-button *ngIf="logeado" (click)="openCitas()">Citas</button>
+  <button mat-raised-button *ngIf="logeado" (click)="openHistorialMedico()">Historial Medico</button>
+
   <button mat-raised-button *ngIf="!logeado" (click)="openDialogLogin()" > Iniciar Sesion </button>
   <button mat-raised-button *ngIf="logeado" (click)="cerrarsesion()" > Cerrar Sesion  </button>
 </mat-toolbar>

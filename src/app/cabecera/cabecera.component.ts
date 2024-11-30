@@ -47,4 +47,8 @@ export class CabeceraComponent implements OnInit {
   openCitas() {
     this.router.navigateByUrl('/citas');
   }
+  openHistorialMedico() {
+    console.log('entro')
+    this.router.navigateByUrl('/historial-medico');
+  }
 }

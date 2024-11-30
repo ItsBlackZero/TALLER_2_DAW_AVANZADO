@@ -1,23 +1,22 @@
 import { NgModule } from "@angular/core";
 import { AppComponent } from './app.component';
-import { BrowserModule } from "@angular/platform-browser";
+import { BrowserModule } from "@angular/platform-browser";  // Solo aquí, en AppModule
 import { RouterOutlet } from "@angular/router";
 import { CabeceraComponent } from "./cabecera/cabecera.component";
 import { PiePaginaComponent } from "./pie-pagina/pie-pagina.component";
 import { PaginainicialComponent } from "./paginainicial/paginainicial.component";
 import { AppRoutingModule } from "./app-routing.module";
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // Importa BrowserAnimationsModule
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';  // Solo una vez aquí
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { ReactiveFormsModule } from "@angular/forms"; 
+import { ReactiveFormsModule } from "@angular/forms";
 import { PublicVarService } from "./publicvar.service";
 import { MatDialogModule } from "@angular/material/dialog";
 import { LoginComponent } from "./login/login.component";
 import { MatTableModule } from "@angular/material/table";
-import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { RegistrarLoginComponent } from "./registrar-login/registrar-login.component";
 import { MatGridListModule } from "@angular/material/grid-list";
 import { MatCardModule } from "@angular/material/card";
@@ -25,6 +24,8 @@ import { ReporteClientesComponent } from "./reporte-clientes/reporte-clientes.co
 import { RegistrarUsuarioComponent } from "./registrar-usuario/registrar-usuario.component";
 import { MatSelectModule }  from '@angular/material/select';
 import { ActualizarUsuarioComponent } from "./actualizar-usuario/actualizar-usuario.component";
+import { HistorialMedicoComponent } from "./historial-medico/historial-medico.component";
+import { MatListModule } from "@angular/material/list";
 
 @NgModule({
     declarations: [
@@ -36,11 +37,12 @@ import { ActualizarUsuarioComponent } from "./actualizar-usuario/actualizar-usua
         RegistrarLoginComponent,
         ReporteClientesComponent,
         RegistrarUsuarioComponent,
-        ActualizarUsuarioComponent
+        ActualizarUsuarioComponent,
+        HistorialMedicoComponent
     ],
     imports: [
-        BrowserModule,
-        BrowserAnimationsModule, // Cambiado para habilitar animaciones
+        BrowserModule,  // Solo aquí en AppModule
+        BrowserAnimationsModule,  // Sólo una vez, no duplicado
         RouterOutlet,
         AppRoutingModule,
         MatButtonModule,
@@ -54,11 +56,11 @@ import { ActualizarUsuarioComponent } from "./actualizar-usuario/actualizar-usua
         MatGridListModule,
         MatCardModule,
         MatTableModule,
-        MatSelectModule
+        MatSelectModule,
+        MatListModule,
     ],
     providers: [
-        PublicVarService,
-        provideAnimationsAsync()
+        PublicVarService
     ],
     bootstrap: [AppComponent]
 })
