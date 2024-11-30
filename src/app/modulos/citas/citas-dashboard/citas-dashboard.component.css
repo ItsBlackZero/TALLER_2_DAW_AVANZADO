@@ -1,0 +1,41 @@
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+mat-card {
+    background-color: #fff;
+    border-radius: 8px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px 0;
+  }
+  
+  mat-card-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #3B1E54;
+    margin-bottom: 20px; 
+  }
+  
+.dashboard-container h2 {
+    margin-bottom: 20px;
+}
+  
+.dashboard-container button {
+    margin: 10px;
+}
+
+.button-container {
+    display: flex;
+    gap: 10px;
+}
+
+div button {
+    background-color: #ffffff; 
+    color: #3B1E54; 
+    border-radius: 5px; 
+    margin-left: 16px; 
+    margin-bottom: 20px;
+}

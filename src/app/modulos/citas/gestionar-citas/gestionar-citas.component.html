@@ -1,0 +1,8 @@
+<div *ngIf="citas.length === 0">No hay citas programadas</div>
+<ul *ngIf="citas.length > 0">
+  <li *ngFor="let cita of citas">
+    {{ cita.fecha }} a las {{ cita.hora }}
+    <button mat-button (click)="cancelarCita(cita.id)">Cancelar</button>
+    <button mat-button (click)="reprogramarCita(cita.id)">Reprogramar</button>
+  </li>
+</ul>

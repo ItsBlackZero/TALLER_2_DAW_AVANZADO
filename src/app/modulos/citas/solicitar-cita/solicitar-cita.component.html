@@ -1,0 +1,17 @@
+<form [formGroup]="citaForm" (ngSubmit)="agendarCita()">
+  <mat-form-field appearance="fill">
+    <mat-label>Selecciona la fecha</mat-label>
+    <input matInput [matDatepicker]="picker" formControlName="fecha">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Selecciona la hora</mat-label>
+    <input matInput formControlName="hora" type="time">
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" type="submit" [disabled]="!citaForm.valid">
+    Agendar Cita
+  </button>
+</form>
