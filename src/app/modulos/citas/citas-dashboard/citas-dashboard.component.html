@@ -1,12 +1,76 @@
 <mat-card>
   <div class="card-header">
+    <div>
       <mat-card-title>Citas</mat-card-title>
-      <div class="button-container">
-        <button mat-button mat-raised-button routerLink="gestionar-citas">Gestionar Citas</button>
-        <button mat-button  mat-raised-button routerLink="solicitar-cita">Solicitar Nueva Cita</button>
+      <p>
+        En cualquier momento agenda, por Internet, una cita con tu médico
+        familiar para ti o tus beneficiarios. ¡Es rápido, sencillo y gratuito!
+      </p>
+    </div>
+    <div class="button-container">
+      <button mat-button mat-raised-button (click)="solicitarCita()">Solicitar Nueva Cita</button>
     </div>
   </div>
-  <router-outlet></router-outlet>
-</mat-card>
+  <br>
+  <section>
+    <h5><strong>Haz tu cita médica con tan solo unos clics.</strong> </h5>
+    <br>
+    <div class="contenedor">
+      <div>
+        <img src="img/buscador.png" alt="buscador">
+        <h6>Encuentra a tu médico</h6>
+        <p>Más de 25 000 médicos y 70 especialidades. Filtra tu búsqueda por ubicación, experiencia, servicios y más</p>
+      </div>
+      <div>
+        <img src="img/calendar.jpg" alt="buscador">
+        <h6>Elige el horario que más te convenga</h6>
+        <p>Selecciona la hora y fecha para la cita en tiempo real</p>
+      </div>
+      <div>
+        <img src="img/check.png" alt="buscador">
+        <h6>Confirma tu cita en 1 minuto</h6>
+        <p>Acceso 24/7 a tus citas a través de todos tus dispositivos. Confirmación y recordatorios por e-mail y WhatsApp</p>
+      </div>
+    </div>
+  </section>
 
-  
+  <br>
+  <mat-card-title>Mis citas</mat-card-title>
+  <table mat-table [dataSource]="Cita">
+    <ng-container matColumnDef="doctor">
+      <th mat-header-cell *matHeaderCellDef> Doctor </th>
+      <td mat-cell *matCellDef="let element"> {{element.doctor}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="especialidad">
+      <th mat-header-cell *matHeaderCellDef> Especialidad </th>
+      <td mat-cell *matCellDef="let element"> {{element.especialidad}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="fecha">
+      <th mat-header-cell *matHeaderCellDef> Fecha </th>
+      <td mat-cell *matCellDef="let element"> {{element.fecha}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="hora">
+      <th mat-header-cell *matHeaderCellDef> Hora/24 hrs </th>
+      <td mat-cell *matCellDef="let element"> {{element.hora}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="acciones">
+      <th mat-header-cell *matHeaderCellDef> Acciones </th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-icon-button (click)="editar(element)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button (click)="eliminar(element.id)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+    
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</mat-card>

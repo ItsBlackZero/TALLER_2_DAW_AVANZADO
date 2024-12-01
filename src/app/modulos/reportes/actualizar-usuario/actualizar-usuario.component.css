@@ -1,0 +1,75 @@
+.centro{
+    margin: 30px 30px;
+  }
+
+  h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #3B1E54;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  mat-form-field.full-width {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  mat-form-field .mat-label {
+    color: #3B1E54;
+  }
+  
+  input.mat-input-element, .mat-select {
+    background-color: #f7f7f7;
+    border-radius: 4px;
+  }
+  
+  input.mat-input-element::placeholder {
+    color: #a9a9a9;
+  }
+  
+  .mat-select-placeholder {
+    color: #a9a9a9;
+  }
+  
+  .button-group {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .button-group button {
+    background-color: #3B1E54;
+    color: #FFFFFF;
+    font-weight: bold;
+  }
+
+  .button-group button:disabled {
+    background-color: #d8cbe9;
+    color: #FFFFFF;
+    font-weight: bold;
+  }
+  
+  .button-group button:hover {
+    background-color: #9B7EBD;
+  }
+  
+  .button-group button[color="warn"] {
+    background-color: #3B1E54;
+    color: #eae4ef;
+  }
+  
+  .button-group button[color="warn"]:hover {
+    background-color: #D4BEE4;
+  }
+  

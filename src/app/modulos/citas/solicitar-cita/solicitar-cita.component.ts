@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { CitasService } from '../citas.service';
+import { MatDialogRef } from '@angular/material/dialog';
+import { Router } from '@angular/router';
+import { DatosCompartidosService } from '../../../datos-compartidos.service';
 
 @Component({
   selector: 'app-solicitar-cita',
@@ -10,26 +12,47 @@ import { CitasService } from '../citas.service';
 export class SolicitarCitaComponent {
   citaForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private citasService: CitasService) {
+  constructor(
+    private fb: FormBuilder,
+    private dialogRef: MatDialogRef<SolicitarCitaComponent>,
+    private router: Router,
+    private datosCompartidos: DatosCompartidosService
+  ) {
     this.citaForm = this.fb.group({
-      fecha: [null, Validators.required],
-      hora: ['', Validators.required],
-    });
-  }
-  
-  ngOnInit(): void {
-    this.citaForm = this.fb.group({
+      doctor: [null, Validators.required],
+      especialidad: [null, Validators.required],
       fecha: [null, Validators.required],
       hora: ['', Validators.required],
     });
   }
 
-  agendarCita(): void {
+  agendarCita() {
     if (this.citaForm.valid) {
-      this.citasService.agregarCita(this.citaForm.value).subscribe({
-        next: () => alert('Cita agendada correctamente'),
-        error: () => alert('Error al agendar la cita'),
-      });
+      const fecha = this.formatFecha(this.citaForm.value.fecha);
+  
+      const citaData = {
+        doctor: this.citaForm.value.doctor,
+        especialidad: this.citaForm.value.especialidad,
+        fecha: `${fecha}`,
+        hora: this.citaForm.value.hora
+      };
+  
+      this.datosCompartidos.setCitaData(citaData);
+      this.dialogRef.close();
+    } else {
+      console.log("Formulario inválido");
     }
+  }
+  
+
+  cancelar() {
+    this.dialogRef.close();
+  }
+  
+  formatFecha(fecha: Date): string {
+    const dia = fecha.getDate().toString().padStart(2, '0');
+    const mes = (fecha.getMonth() + 1).toString().padStart(2, '0');
+    const anio = fecha.getFullYear();
+    return `${anio}-${mes}-${dia}`;
   }
 }
