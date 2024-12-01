@@ -2,7 +2,7 @@ import { Component, inject, OnInit } from '@angular/core';
 import { PublicVarService } from '../publicvar.service';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
-import { LoginComponent } from '../login/login.component';
+import { LoginComponent } from '../modulos/seguridad/login/login.component';
 
 @Component({
   selector: 'app-cabecera',
@@ -40,13 +40,13 @@ export class CabeceraComponent implements OnInit {
   }
 
   openDialogReportes(){
-    this.router.navigateByUrl('/ReporteCliente');
-
+    this.router.navigateByUrl('/reportes');
   }
 
   openCitas() {
     this.router.navigateByUrl('/citas');
   }
+
   openHistorialMedico() {
     console.log('entro')
     this.router.navigateByUrl('/historial-medico');

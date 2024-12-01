@@ -1,17 +1,37 @@
-<form [formGroup]="citaForm" (ngSubmit)="agendarCita()">
-  <mat-form-field appearance="fill">
-    <mat-label>Selecciona la fecha</mat-label>
-    <input matInput [matDatepicker]="picker" formControlName="fecha">
-    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-datepicker #picker></mat-datepicker>
-  </mat-form-field>
+<div class="centro">
+  <form [formGroup]="citaForm" (ngSubmit)="agendarCita()">
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Doctor</mat-label>
+      <mat-select formControlName="doctor" required>
+        <mat-option value="Dr. Juan Perez García">Dr. Juan Perez García</mat-option>
+        <mat-option value="Dra. María Salazar Villamar">Dra. María Salazar Villamar</mat-option>
+        <mat-option value="Dr. Marcos Torres Baque">Dr. Marcos Torres Baque</mat-option>
+      </mat-select>
+    </mat-form-field>
 
-  <mat-form-field appearance="fill">
-    <mat-label>Selecciona la hora</mat-label>
-    <input matInput formControlName="hora" type="time">
-  </mat-form-field>
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Especialidad</mat-label>
+      <mat-select formControlName="especialidad" required>
+        <mat-option value="Medicina general">Medicina general</mat-option>
+        <mat-option value="Ginecología">Ginecología</mat-option>
+        <mat-option value="Pediatría">Pediatría</mat-option>
+      </mat-select>
+    </mat-form-field>
 
-  <button mat-raised-button color="primary" type="submit" [disabled]="!citaForm.valid">
-    Agendar Cita
-  </button>
-</form>
+    <mat-form-field appearance="fill">
+      <mat-label>Selecciona la fecha</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="fecha">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill">
+      <mat-label>Selecciona la hora</mat-label>
+      <input matInput formControlName="hora" type="time">
+    </mat-form-field>
+  
+    <button mat-raised-button [disabled]="!citaForm.valid">
+      Agendar Cita
+    </button>
+  </form>
+</div>
